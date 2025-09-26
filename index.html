@@ -12,36 +12,42 @@
 
   <body>
     <header class="header">
-      <nav class="" aria-label="Меню шапки">
-
-        <ul class="">
-          <li class="">
-            <a class="" href="#">главная</a>
+      <!-- 1 колонка / навигация меню -->
+      <nav class="header__menu" aria-label="Меню шапки">
+        <ul class="header__links-list">
+          <li class="header__link_active">
+            <a class="header__links-list-item_no-bullit" href="#cover">главная</a>
           </li>
 
-          <li class="">
-            <a class="" href="#">посмотреть лоты</a>
+          <li сlass="header__links-list-item">
+            <a class="header__link" href="#lots">посмотреть лоты</a>
           </li>
 
-          <li class="">
-            <a class="" href="#">об аукционе</a>
+          <li сlass="header__links-list-item">
+            <a class="header__link" href="#about">об аукционе</a>
           </li>
         </ul>
 
       </nav>
-      <a class="" href="#" aria-label="Логотип">
-            <img class="" src="./images/logo-black.svg" alt="">
+
+      <!-- 2 колонка -->
+
+      <a class="header__logo" aria-label="Логотип">
+            <img class="header__logo-image" src="./images/logo-black.svg" alt="">
           </a>
-      <address class="">
-        <a class="" href="tel:+99995555555">+9 999 555 5555</a>
-        <a class="" href="mailto:info@sobaka.ge">info@sobaka.ge</a>
-        <p class="">наб. Принсенграхт 263–265, Амстердам</p>
+      
+       <!-- 3 колонка -->
+      <address class="address">
+        <a class= "address__item" href="tel:+99995555555">+9 999 555 5555</a>
+        <a class= "address__item" href="mailto:info@sobaka.ge">info@sobaka.ge</a>
+        <p class= "header__address">наб. Принсенграхт 263–265, Амстердам</p>
       </address>
+
     </header>
 
     <main class="main">
 <!-- #1 баннер -->
-      <section class="cover">
+      <section id="cover" class="cover">
         <h1 class=""></h1>
         <div class="description">
           <p></p>
@@ -50,7 +56,7 @@
       </section>
 
 <!-- #2 Лоты -->
-      <section class="lots"> <!-- изменить класс -->
+      <section id="lots" class="lots">
         <h2 class="">Лоты</h2>
 
         <ul class="">
@@ -79,7 +85,7 @@
       </section>
 
 <!-- #3 Об аукционе -->
-      <section class="about">  <!-- ABOUT ??-->
+      <section id="about" class="about">  <!-- ABOUT ??-->
       <!-- 1 колонка -->
          <div class=""></div>
 
