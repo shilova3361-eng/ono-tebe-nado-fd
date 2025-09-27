@@ -70,7 +70,9 @@ html, body {
 }
 
 /* ГЛАВНАЯ - без подчёркивания */
-.header__links-list li.header__link_active > a { text-decoration: none; }
+.header__links-list li.header__link_active > a {
+    text-decoration: none;
+}
 
 /* ЛОГОТИП */
 .header__logo {
@@ -154,7 +156,8 @@ html, body {
 
 /* Чтобы весь контент был над overlay */
 .cover > *:not(.overlay) {
-    position: relative; z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 /* ЗАГОЛОВОК */
@@ -210,10 +213,11 @@ html, body {
   word-spacing: 19px;
 }
 
-/* КНОПКА «Сделать ставку» */
+/* кнопка «Сделать ставку» */
 .bet-button {
     justify-self: end;                  /* кнопка у правого края */
-  width: 256px; height: 51px;         /* Figma */
+  width: 256px;
+  height: 51px;         /* Figma */
   box-sizing: border-box;
   background: transparent;
   color: #fff;
