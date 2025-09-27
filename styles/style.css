@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden;
+}
+
 .header {
   width: 1100px;
   height: 293px;
@@ -17,7 +21,8 @@
 .header__menu {
     grid-column: 1;
     justify-self: start;
-    transform: translateX(35px);
+    transform: none;
+    padding-left: 35px;
 }
 
 .header__links-list {
@@ -37,7 +42,8 @@
 
 .header__links-list > li + li::before {
   content:"";
-  width:6px; height:6px;         /* диаметр точки */
+  width:6px;
+  height:6px;         /* диаметр точки */
   border-radius:50%;
   border:1px solid #000;
   background:transparent;
@@ -45,7 +51,9 @@
   flex:0 0 auto;
 }
 
-.header__links-list > li:first-child { list-style: none; }
+.header__links-list > li:first-child {
+    list-style: none;
+}
 
 /* пункты меню */
 .header__links-list a {
@@ -54,9 +62,12 @@
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
   padding: 6px 0px;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
-.header__link { text-decoration: underline; }
+
+.header__link {
+    text-decoration: underline;
+}
 
 /* ГЛАВНАЯ - без подчёркивания */
 .header__links-list li.header__link_active > a { text-decoration: none; }
@@ -118,6 +129,7 @@
   min-height: 757px;
   padding: 145px 50px 50px;
   box-sizing: border-box;
+  overflow-x: clip;
 
   /* фон */
   background: url("../images/cover.jpg") center/cover no-repeat;
@@ -141,7 +153,9 @@
 }
 
 /* Чтобы весь контент был над overlay */
-.cover > *:not(.overlay) { position: relative; z-index: 2; }
+.cover > *:not(.overlay) {
+    position: relative; z-index: 2;
+}
 
 /* ЗАГОЛОВОК */
 .cover__title {
@@ -152,14 +166,13 @@
   gap: 0.01em;
   font-weight: 700;
   font-size: 100px;
-
   letter-spacing: 0.3em;
   font-style: normal;
   line-height: 115%;
 }
 
 /* ОНО */
-.aligned-text_left   {
+.aligned-text_left {
     text-align: left;
     transform: translate(7px, 20px);
 }
@@ -171,7 +184,7 @@
 }
 
 /* НАДО */
-.aligned-text_right  {
+.aligned-text_right {
     text-align: right;
     transform: translate(30px, -30px);
 }
@@ -219,7 +232,9 @@
 }
 
 /* плавный скролл */
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 
 /* #2 ЛОТЫ */
@@ -231,7 +246,9 @@ html { scroll-behavior: smooth; }
 
 .lots__heading {
   margin: 0 0 24px;
-  transform: translate(48px, -2px);
+  transform: none;
+  margin-left: 48px;
+  margin-top: -2px;
   font: 700 40px/47px 'Raleway', Arial, sans-serif;
   text-transform: uppercase;
   color: #000;
@@ -242,7 +259,7 @@ html { scroll-behavior: smooth; }
   list-style: none;   /* сброс */
   margin: 0;
   padding: 0;
-  transform: translateX(5px);
+  transform: none;
   display: flex;
   flex-wrap: wrap;    /* перенос 4-й карточки на новую строку */
   gap: 25px;
@@ -428,7 +445,7 @@ html { scroll-behavior: smooth; }
 /* Меню */
 .footer__menu {
     justify-self: center;
-    transform: translateX(-50px);
+    transform: none;
 }
 
 .footer__menu-list {
@@ -460,7 +477,7 @@ html { scroll-behavior: smooth; }
   list-style: none;
   margin: 0;
   padding: 0;
-  transform: translateX(-20px);
+  transform: none;
 
   justify-self: start;
   display: flex;
