@@ -311,14 +311,6 @@ html {
   background-image: url("../images/card-lot-03.jpg");
 }
 
-/* ОВЕРЛЕЙ */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 2;
-}
-
 /* ТЕКСТ ВНУТРИ КАРТОЧКИ */
 .card__title,
 .card__text {
@@ -431,19 +423,6 @@ html {
   max-width: 265px;
   color: #000;
   font: 400 18px/24px 'Raleway', Arial, sans-serif;
-}
-
-.address__item {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1px;
-  white-space: nowrap;
-}
-
-.header__address {
-  margin: 0;
-  overflow-wrap: anywhere;
 }
 
 /* Меню */
