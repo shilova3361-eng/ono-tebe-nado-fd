@@ -2,13 +2,26 @@ html, body {
     overflow-x: hidden;
 }
 
-.header {
-  width: 1100px;
-  height: 293px;
-  margin: 0 auto;
-  padding: 16px;
+html {
+    scroll-behavior: smooth;
+}
 
+.header,
+.cover,
+.lots,
+.about,
+.footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
   box-sizing: border-box;
+}
+
+.header {
+  height: 293px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
@@ -21,17 +34,16 @@ html, body {
 .header__menu {
     grid-column: 1;
     justify-self: start;
-    transform: none;
-    padding-left: 35px;
+    margin-left: 12px;
 }
 
 .header__links-list {
-  display: flex;                 /* пункты меню в ряд */
-  gap: 0;                     /* расстояние между пунктами */
+  display: flex;
+  gap: 2px;
   align-items: center;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;            /* кружочки по заданию */
   font: 400 18px/21px 'Raleway', Arial, sans-serif;
 }
 
@@ -43,35 +55,34 @@ html, body {
 .header__links-list > li + li::before {
   content:"";
   width:6px;
-  height:6px;         /* диаметр точки */
+  height:6px;
   border-radius:50%;
   border:1px solid #000;
   background:transparent;
-  margin:0 14px;                  /* расстояние от текста до точки */
+  margin:0 14px;
   flex:0 0 auto;
 }
 
-.header__links-list > li:first-child {
-    list-style: none;
+.header__link {
+    text-decoration: underline;
+  font: 400 18px/21px "Raleway", Arial, sans-serif;
+  color: inherit;
 }
 
+/* ГЛАВНАЯ - без подчёркивания */
+.header__link_active {
+    text-decoration: none;
+}
+
+
 /* пункты меню */
-.header__links-list a {
+.header__links-list a:not(.header__link_active) {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
   padding: 6px 0px;
   white-space: nowrap;
-}
-
-.header__link {
-    text-decoration: underline;
-}
-
-/* ГЛАВНАЯ - без подчёркивания */
-.header__links-list li.header__link_active > a {
-    text-decoration: none;
 }
 
 /* ЛОГОТИП */
@@ -81,20 +92,20 @@ html, body {
   display: block;
   width: 135px;
 }
+
 .header__logo-image {
   display: block;
   width: 100%;
   height: auto;
-  padding: 0;
 }
 
 /* АДРЕС - весь блок*/
 .address {
   grid-column: 3;
-  justify-self: end;             /* к правому краю колонки */
-  max-width: 240px;              /* ширина */
-  font-style: normal;            /* убрать курсив у адресса */
-  margin: 80px 35px 80px 5px;
+  justify-self: end;
+  max-width: 240px;
+  font-style: normal;
+  margin: 0;
   text-align: left;
 
   display: flex;
@@ -108,16 +119,15 @@ html, body {
 /* телефон и почта */
 .address__item {
   color: inherit;
-  text-decoration: underline;    /* подчёркивание */
+  text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 1px;
-  white-space: nowrap;           /* в одну строку */
+  white-space: nowrap;
 }
 
 /* Адресс — НЕ подчёркивается и переносится */
 .header__address {
   margin: 0;
-  white-space: normal;           /* перенос */
   overflow-wrap: anywhere;
 }
 
@@ -126,22 +136,18 @@ html, body {
 
 .cover {
   position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
   min-height: 757px;
-  padding: 145px 50px 50px;
+  padding-top: 145px;
+  padding-bottom: 50px; 
   box-sizing: border-box;
   overflow-x: clip;
 
   /* фон */
   background: url("../images/cover.jpg") center/cover no-repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;                        /* текст поверх тёмного overlay */
+  color: #fff;
   display: grid;
-  grid-template-rows: 1fr auto;       /* заголовок растягивается, описание снизу */
-  row-gap: 24px;                      /* интервал между заголовком и описанием */
-  z-index: 0;                         /* база для слоёв */
+  grid-template-rows: 1fr auto;
+  row-gap: 24px;
 }
 
 /* OVERLAY (полупрозрачный слой поверх секции) */
@@ -150,7 +156,7 @@ html, body {
   inset: 0;
   background: #000;
   opacity: 0.6;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -163,10 +169,10 @@ html, body {
 /* ЗАГОЛОВОК */
 .cover__title {
   grid-row: 1;
-  margin: 0;
+  margin: 24px 0 70px 0;
   text-transform: uppercase;
   display: grid;
-  gap: 0.01em;
+  row-gap: 12px;
   font-weight: 700;
   font-size: 100px;
   letter-spacing: 0.3em;
@@ -177,19 +183,16 @@ html, body {
 /* ОНО */
 .aligned-text_left {
     text-align: left;
-    transform: translate(7px, 20px);
 }
 
 /* ТЕБЕ */
 .aligned-text_center {
     text-align: center;
-    transform: translate(12px, 4px);
 }
 
 /* НАДО */
 .aligned-text_right {
     text-align: right;
-    transform: translate(30px, -30px);
 }
 
 
@@ -198,7 +201,7 @@ html, body {
 .cover__description {
   grid-row: 2;
   display: grid;
-  grid-template-columns: 1fr max-content; /* текст слева, кнопка справа */
+  grid-template-columns: 1fr max-content;
   align-items: center;
   column-gap: 28px;
 }
@@ -215,14 +218,15 @@ html, body {
 
 /* кнопка «Сделать ставку» */
 .bet-button {
-    justify-self: end;                  /* кнопка у правого края */
+    margin: 0;
+    justify-self: end;
   width: 256px;
-  height: 51px;         /* Figma */
+  height: 51px;
   box-sizing: border-box;
   background: transparent;
   color: #fff;
   border: 0.1px solid #fff;
-  font: 500 22px/26px 'Raleway', sans-serif;
+  font: 500 22px/26px 'Raleway', Arial, sans-serif;
   text-transform: uppercase;
   cursor: pointer;
   transition: background .2s, color .2s;
@@ -235,24 +239,20 @@ html, body {
   outline: none;
 }
 
-/* плавный скролл */
-html {
-    scroll-behavior: smooth;
-}
+
 
 
 /* #2 ЛОТЫ */
+
 .lots {
-  width: 1052px;
   margin-top: 185px;
-  margin-left: 18px;
 }
+
 
 .lots__heading {
   margin: 0 0 24px;
   transform: none;
-  margin-left: 48px;
-  margin-top: -2px;
+  margin-left: 24px;
   font: 700 40px/47px 'Raleway', Arial, sans-serif;
   text-transform: uppercase;
   color: #000;
@@ -260,12 +260,12 @@ html {
 
 /* СПИСОК КАРТОЧЕК */
 .lots__card-list {
-  list-style: none;   /* сброс */
+  list-style: none;
   margin: 0;
   padding: 0;
   transform: none;
   display: flex;
-  flex-wrap: wrap;    /* перенос 4-й карточки на новую строку */
+  flex-wrap: wrap;
   gap: 25px;
 }
 
@@ -279,7 +279,7 @@ html {
 .card-link {
   display: block;
   height: 100%;
-  text-decoration: none; /* убрать подчёркивание у ссылки */
+  text-decoration: none;
   color: inherit;
 }
 
@@ -291,9 +291,9 @@ html {
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 48px 40px;      /* как в фигме */
+  padding: 48px 40px;
 
-  /* фоновые изображения — общие правила */
+  /* фоновые изображения */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -322,38 +322,35 @@ html {
   margin: 0;
   font: 700 22px/120% 'Raleway', Arial, sans-serif;
   text-transform: uppercase;
-  text-decoration-line: underline; /* как в макете */
+  text-decoration-line: underline;
 }
 
 .card__text {
   margin: 0;
-  font: 400 20px/120% 'Raleway', Arial, sans-serif; /* 24px line-height */
+  font: 400 20px/120% 'Raleway', Arial, sans-serif;
 }
 
 /* "ПОСМОТРЕТЬ БОЛЬШЕ" */
 .lots__look-more-link {
   display: inline-block;
   margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 24px;
   font: 400 20px/23px 'Raleway', Arial, sans-serif;
   color: #000;
   text-decoration: none;
-  border-bottom: 1px solid #000; /* имитация линии */
+  border-bottom: 1px solid #000;
   padding-bottom: 2px;
 }
 
 
 /* #3 ОБ АУКЦИОНЕ */
 .about {
-  width: 1052px;
-  margin-left: 22px;
   margin-top: 120px;
-
   display: grid;
   grid-template-columns: 334px 1fr;
   column-gap: 25px;
-  align-items: start;                /* верхнее выравнивание контента */
-  padding-top: 32px;                 /* как в фигме */
+  align-items: start;
+  padding-top: 32px;
 }
 
 /* Черный круг для логотипа */
@@ -370,8 +367,8 @@ html {
 
 /* Белый логотип внутри круга */
 .about__logo-image {
-  width: 148px;   /* из фигмы */
-  height: 114px;  /* из фигмы */
+  width: 148px;
+  height: 114px;
   margin-top: 10px;
   margin-bottom: 5px;
   object-fit: contain;
@@ -402,24 +399,22 @@ html {
 /* ПОДВАЛ */
 
 .footer {
-  width: 1052px;
-  margin-left: 24px;
   margin-top: 180px;
-  margin-bottom: 80px;
-
+  margin-bottom: 90px;    
   display: grid;
-  grid-template-columns: 334px 1fr 240px;
+  grid-template-columns: max-content 1fr max-content;
   align-items: start;
-  padding-block: 0;
+  column-gap: 24px;
 }
 
 .footer__address {
   display: flex;
+  justify-self:start;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  margin-left: 3px;
-
+  margin: 0 ;
+  grid-column: 1;
   max-width: 265px;
   color: #000;
   font: 400 18px/24px 'Raleway', Arial, sans-serif;
@@ -427,13 +422,13 @@ html {
 
 /* Меню */
 .footer__menu {
+    grid-column: 2;
     justify-self: center;
-    transform: none;
 }
 
 .footer__menu-list {
   list-style: none;
-  margin: 0;
+  margin:0;
   padding: 0;
 
   display: flex;
@@ -452,19 +447,19 @@ html {
 }
 
 .footer__menu-link_active {
-  text-decoration: none; /* главная без подчеркивания */
+  text-decoration: none;
 }
 
 /* Социальные сети */
 .footer__social-list {
+    grid-column: 3;
   list-style: none;
   margin: 0;
   padding: 0;
   transform: none;
-
-  justify-self: start;
+  justify-self: end;
   display: flex;
-  gap: 48px;
+  gap: 32px;
 }
 
 .footer__social-link {
