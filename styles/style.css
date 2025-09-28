@@ -138,7 +138,7 @@ html {
   position: relative;
   min-height: 757px;
   padding-top: 145px;
-  padding-bottom: 50px; 
+  padding-bottom: 50px;
   box-sizing: border-box;
   overflow-x: clip;
 
@@ -400,7 +400,7 @@ html {
 
 .footer {
   margin-top: 180px;
-  margin-bottom: 90px;    
+  margin-bottom: 90px;
   display: grid;
   grid-template-columns: max-content 1fr max-content;
   align-items: start;
