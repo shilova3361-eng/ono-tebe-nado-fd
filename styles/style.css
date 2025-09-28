@@ -18,7 +18,7 @@ html {
 }
 
 .header {
-  padding-top: 24px;
+  padding-top: 90px;
   padding-bottom: 95px;
 
   display: grid;
@@ -246,9 +246,6 @@ html {
   outline: none;
 }
 
-
-
-
 /* #2 ЛОТЫ */
 
 .lots {
@@ -256,11 +253,10 @@ html {
   
 }
 
-
 .lots__heading {
   margin: 0 0 20px;
   margin-left: 37px;
-  padding-left: 0; 
+  padding-left: 0;
   transform: none;
   font: 700 40px/47px 'Raleway', Arial, sans-serif;
   text-transform: uppercase;
@@ -408,7 +404,7 @@ html {
 /* ПОДВАЛ */
 
 .footer {
-  margin: 175px auto 90px;
+  margin: 180px auto 90px;
   display: grid;
   grid-template-columns: 334px 1fr 240px;
   align-items: start;
