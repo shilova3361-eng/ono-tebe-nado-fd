@@ -1,16 +1,8 @@
-html, body {
-    overflow-x: hidden;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
-.header,
-.cover,
-.lots,
-.about,
-.footer {
+.container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
@@ -26,8 +18,10 @@ html {
   align-items: center;
   column-gap: 32px;
   color: #000;
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Raleway', Arial,
+   sans-serif;
 }
+
 
 /* МЕНЮ */
 .header__menu {
@@ -38,11 +32,12 @@ html {
 
 .header__links-list {
   display: flex;
-  gap: 0;
   align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  row-gap: 8px;
   font: 400 18px/21px 'Raleway', Arial, sans-serif;
 }
 
@@ -81,7 +76,6 @@ html {
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
   padding: 6px 0px;
-  white-space: nowrap;
 }
 
 /* ЛОГОТИП */
@@ -105,6 +99,7 @@ html {
   max-width: 240px;
   font-style: normal;
   margin: 0;
+  padding-right: 20px;
   margin-right: 24px;
   text-align: left;
 
@@ -122,13 +117,12 @@ html {
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 1px;
-  white-space: nowrap;
 }
+
 
 /* Адресс — НЕ подчёркивается и переносится */
 .address__text {
   margin: 0;
-  overflow-wrap: anywhere;
 }
 
 
@@ -140,7 +134,6 @@ html {
   padding-top: 145px;
   padding-bottom: 50px;
   box-sizing: border-box;
-  overflow-x: clip;
 
   /* фон */
   background: url("../images/cover.jpg") center/cover no-repeat;
@@ -206,7 +199,7 @@ html {
 .cover__description {
   grid-row: 2;
   display: grid;
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: 1fr auto;
   align-items: center;
   column-gap: 28px;
 }
@@ -228,6 +221,7 @@ html {
     margin-right: 24px;
     justify-self: end;
   width: 256px;
+  max-width: 100%;
   height: 51px;
   box-sizing: border-box;
   background: transparent;
